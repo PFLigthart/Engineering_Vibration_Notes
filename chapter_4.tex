@@ -1,0 +1,42 @@
+\chapter{Chapter 4 - Multiple-degree-of-freedom systems}
+
+More than one degree of freedom means more than one natural frequency. To keep record of each coordinate in the system, vectors are introduced and used along with matrices.
+
+  \section{Two-degree-of-freedom model (undamped)}
+    In moving from single-degree-of-freedom systems to two or more degrees of freedom, two important physical phenomena result.
+
+    \begin{enumerate}
+      \item The first important difference is that ta two-degree-of-freedom system will have two natural frequencies
+      \item The second important phenomenon is that of a mode shape, which is not present in single-degree-of-freedom systems. A mode shape is a vector that described the relative motion between the two masses or between tow degrees of freedom.
+    \end{enumerate}
+
+  These important concepts of multiple natural frequencies and mode shapes are intimately tied to the mathematical concepts of eigenvalues and eigenvectors of computational matrix theory.
+
+
+    \begin{figure}
+      \centering
+      \begin{tikzpicture}
+        % single DOF mass-spring system
+        \draw[thick] (0,0) -- (0,1);  % fixed wall
+        % add hatching to represent the wall
+        \fill[pattern=north east lines] (0,0) rectangle (-0.25,1);
+        \draw[decorate,decoration=zigzag] (0,0.5) -- (2,0.5);
+        \node at (1,-0.15) {$k_{1}$};  % spring constant label
+        \draw (2,0) rectangle (3,1);
+        \node at (2.5,0.5) {$m_{1}$};  % mass label
+        \draw (2.5, 1.1) -- (2.5, 1.7);  % reference line 
+        \draw[->, -{stealth}] (2.5, 1.4) -- (3.5, 1.4);  % coordinate arrow 
+        \node at (3.75, 1.4) {$x_{1}$};  % coordinate label
+        % draw a second mass connected to the first mass in series
+        \draw[decorate,decoration=zigzag] (3,0.5) -- (5,0.5);
+        \node at (4,-0.15) {$k_{2}$};  % spring constant label
+        \draw (5,0) rectangle (6,1);
+        \node at (5.5,0.5) {$m_{2}$};  % mass label
+        \draw (5.5, 1.1) -- (5.5, 1.7);  % reference lines
+        \draw[->, -{stealth}] (5.5, 1.4) -- (6.5, 1.4);  % coordinate arrow
+        \node at (6.75, 1.4) {$x_{2}$};  % coordinate label
+      \end{tikzpicture}
+      \caption{Single degree of freedom mass-spring system}\label{fig:simple_2_dof_model_of_two_masses_connected_in_series_by_two_springs}
+    \end{figure}
+
+  \Cref{fig:simple_2_dof_model_of_two_masses_connected_in_series_by_two_springs} shows a simple two-degree-of-freedom system. The two masses are connected in series by two springs. Each mass only has a single degree of freedom because it can only move in a single direction. However, when considering the effect of the masses on one another, to completely described the system, two coordinates, namely $x_{1}$ and $x_{2}$ are needed. That is to say, the two coordinates depend on each other.
