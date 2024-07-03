@@ -1,17 +1,17 @@
 \chapter*{Chapter 1 - Introduction to vibration and free response}
 
-  \begin{fmd-definition}{Degree of freedom}
+  \begin{fmd-definition}[Degree of freedom]
     The degree of freedom of a system is the minimum number of displacement coordinates needed to represent the position of the systems mass at any instant of time.
   \end{fmd-definition}
 
-  \begin{fmd-definition}{Free response}
-    Free response refers to analysing the vibration of a system resulting from a non-zero inital displacement and/or velocity of the system with no external force or moment applied.
+  \begin{fmd-definition}[Free response]
+    Free response refers to analysing the vibration of a system resulting from a non-zero initial displacement and/or velocity of the system with no external force or moment applied.
   \end{fmd-definition}
 
   \section{The spring-mass model}
     The fundamental kinematic quantities used to describe the motion of a particle are displacement, velocity, and acceleration vectors.
 
-    \begin{fmd-definition}{Kinematic}
+    \begin{fmd-definition}[Kinematic]
       Kinematic quantities are those that describe the motion of a particle without regard to the forces that cause the motion.
     \end{fmd-definition}
 
@@ -38,13 +38,13 @@
       \caption{Single degree of freedom mass-spring system}\label{fig:single-dof-mass-spring}
     \end{figure}
 
-    In~\cref{fig:single-dof-mass-spring}, the forces acting on the mass consist of the force of gravity pulling down ($mg$) and the \textit{elastic-restoring} force of the spring pulling it back up ($f_k$)\dots
+    In~\cref{fig:single-dof-mass-spring}, the forces acting on the mass consist of the force of gravity pulling down ($mg$) and the \textit{elastic-restoring} force of the spring pulling it back up ($f_k$).
 
-    \begin{fmd-definition}{Constant of proportionality}
+    \begin{fmd-definition}[Constant of proportionality]
       The slope of the straight line in the graph of force versus displacement of a spring.
     \end{fmd-definition}
 
-    The constant of proportionality can be easily determined for a spring using a simple experiment. Hanging a known mass on a spring and measuring the resulting displacement. This can be repeated for successivly hevier masses and a force displacement graph can be plotted.
+    The constant of proportionality can be easily determined for a spring using a simple experiment. Hanging a known mass on a spring and measuring the resulting displacement. This can be repeated for successively heavier masses and a force displacement graph can be plotted.
 
     \begin{figure}
       \begin{tikzpicture}
@@ -99,4 +99,67 @@
       \end{tikzpicture}
       \caption{The static deflection curve for the spring in~\cref{fig:spring-deflection}}\label{fig:spring-deflection-curve}
     \end{figure}
-      
+
+    The equation that described the behaviour of the spring is given by,
+
+    \begin{equation}
+      f_{k} = k\cdot x.
+    \end{equation}
+
+    \noindent The value of the slope, denoted by $k$, is called the stiffness of the spring and is a property that characterises the spring for all situations for which the displacement is within the linear range of the spring. Non-lienar systems are significantly more difficult to solve. It is important to remember that when considering vibration, the deformations are typically small and hence for the majority of the cases (at least in the textbook) are within the linear elastic region. An additional point that will be covered in later chapters is that the potential energy stored in a spring with stiffness $k$ and displacement $x$ is given by,
+
+    \begin{equation}
+      U = \frac{1}{2}kx^2.
+    \end{equation}
+
+
+\begin{figure}
+  \centering
+  \begin{subfigure}{0.45\textwidth}
+    \begin{tikzpicture}[scale=0.6]
+      % fixed wall
+      \draw[pattern= north east lines, draw=white] (0,0) rectangle (0.8,2);
+      \draw[thick] (0.8,0) -- (0.8,2);
+      % spring
+      \draw[decorate,decoration={zigzag}] (0.8,1) -- (5,1);
+      % mass
+      \draw (5,0) rectangle (7,2);
+      % ground below mass
+      \draw (3,0) -- (9,0);
+
+      % reference points
+      \draw (6,2.5) -- (6,3.5); % rest position
+      \draw[->,-{stealth}] (6,3) -- (7,3); % positive direction
+      \node at (7.3,3) {$x$}; % positive direction label
+      \draw[->,-{stealth}] (7,1) -- (8,1); % force 
+
+      % labels
+      \node at (6,1) {$m$}; % mass
+      \node at (3, 1.5) {$k$}; % spring constant
+      \node at (8.5, 1) {$f$}; % force
+    \end{tikzpicture}
+    \caption{Full diagram}
+  \end{subfigure}
+  \begin{subfigure}{0.45\textwidth}
+    \begin{tikzpicture}
+      % mass
+      \draw (5,0) rectangle (7,2);
+      \draw[{stealth}-] (4,1) -- (5,1);  % spring force
+      \draw[->,-{stealth}] (6,-1) -- (6,0); % normal force  direction
+      \draw[->,-{stealth}] (7,1) -- (8,1); % force 
+      \draw[->,-{stealth}] (6,1) -- (6,0); % gravity direction
+
+      % labels
+      \node at (6.3,1) {$mg$}; % mass
+      \node at (3.5, 1.3) {$f_k = kx$}; % spring force
+      \node at (6.3, -1.3) {$f_N$}; % normal force
+      \node at (8.5, 1) {$f$}; % force
+    \end{tikzpicture}
+    \caption{Free body diagram}
+  \end{subfigure}
+  \caption{This is my figure}\label{fig:example_figure}
+\end{figure}
+
+
+
+
